@@ -34,7 +34,7 @@ st.info("Downloading U.S. states reference table...")
 state_url = "https://docs.google.com/spreadsheets/d/14wvnQygIX1eCVo7H5B7a96W1v5VCg6Q9yeRoESF6epw/export?format=csv"
 try:
     state_table = pd.read_csv(state_url)
-    state_table.to_csv('cache/states/csv', index=False)
-    st.success("Saved U.S. states to 'cache/states.csv'.")
+    state_table.to_csv('cache/survey.csv', index=False)
+    st.success("Saved U.S. states to 'cache/survey.csv'.")
 except Exception as e:
     st.error(f"Error loading states file: {e}")

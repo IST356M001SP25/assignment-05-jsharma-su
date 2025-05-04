@@ -1,7 +1,7 @@
 # Reflection
 
-Student Name:  name
-Sudent Email:  email
+Student Name:  Jiya Sharma
+Sudent Email:  jsharma@syr.edu
 
 ## Instructions
 
@@ -23,3 +23,14 @@ Examples:
 
 `--- Reflection Below This Line ---`
 
+This assignment helped me realize how much deeper my understanding of Python scripting and data extraction needs to go—especially when integrating with external services like Google Sheets and web scraping tools like pandas.read_html. I learned how to load survey data directly from a public Google Sheet using a CSV export link, extract the year from timestamps using a custom function, and scrape cost of living tables for different years from Numbeo. These are valuable skills that blend API usage, web scraping, and data wrangling.
+
+One area where I initially struggled was understanding how Streamlit behaves differently when run as a script versus when executed through its intended interface (streamlit run). I got repeated warnings about missing ScriptRunContext, which I learned happens when trying to use Streamlit interactively without launching the app properly. Knowing that I must run streamlit run from the command line in the correct folder, and not just python filename.py, was an important lesson about how Streamlit’s runtime environment works.
+
+I also encountered confusion around file paths and terminal behavior. Even though I knew the file existed, I saw “file does not exist” errors. This helped me better understand how relative vs absolute paths work in the terminal, and how important it is to cd into the correct directory. I also became more aware of subtle issues like hidden characters or case sensitivity in filenames—things that can go wrong silently if you aren’t paying attention.
+
+While I successfully used pandas and read_html, I still need more practice with exception handling and debugging in scripts that automate web or file tasks. For example, my script could break if the Numbeo table layout changes or if the Google Sheet link is revoked. I want to learn how to make these scripts more robust by using try/except blocks, checking for valid HTML structure, and giving clearer error messages.
+
+Next, I plan to revisit how Streamlit apps are structured so I can move this code from a raw script into an actual app layout using st.title(), st.write(), and other components. I also want to better understand the role of caching and user inputs within Streamlit, which will help me build more interactive data tools in the future.
+
+Overall, this assignment pushed me to debug more independently and understand how tools like Streamlit and pandas work together to process and present data. It was a real-world challenge that forced me to bridge scripting, data science, and web development.
