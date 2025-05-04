@@ -40,5 +40,11 @@ def upload_file(file_name, bucket_name, object_name=None):
     return True
 
 if __name__ == '__main__':
-    #TODO: Write your load code here (remove pass first)
-    pass
+    bucket_name = 'ist356jsharma'
+    files_to_upload = [
+        'cache/annual_salary_adjusted_by_location_and_age.csv',
+        'cache/annual_salary_adjusted_by_location_and_education.csv'
+    ]
+    for file in files_to_upload:
+        obj = file.replace('cache/', '')
+        upload_file(file, bucket_name, obj)
