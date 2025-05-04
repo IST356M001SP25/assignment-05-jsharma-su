@@ -1,16 +1,24 @@
 from datetime import datetime
+import re
 
 def clean_currency(item: str) -> float:
     '''
     remove anything from the item that prevents it from being converted to a float
     '''    
-    return 
+    if not item:
+        return 0.0
+    cleaned = re.sub(r'[^\d.-]', '', item)
+    return float(cleaned) if cleaned else 0.0
 
 def extract_year_mdy(timestamp):
     '''
     use the datatime.strptime to parse the date and then extract the year
     '''
-    return 
+    try:
+        date_obj = datetime.strptime(timestamp, '%m/%d/%Y')
+        return date_obj.year
+    except ValueError:
+        return None
 
 def clean_country_usa(item: str) ->str:
     '''
@@ -20,12 +28,21 @@ def clean_country_usa(item: str) ->str:
     possibilities = [
         'united states of america', 'usa', 'us', 'united states', 'u.s.'
     ]
-    return
+    item_lower = item.strip().lower()
+    if item_lower in possibilities:
+        return 'United States'
+    return item.strip().title()
 
 
 if __name__=='__main__':
-    print("""
-        Add code here if you need to test your functions
-        comment out the code below this like before sumbitting
-        to improve your code similarity score.""")
+    print(clean_currency("$1,234.56"))          # 1234.56
+    print(clean_currency("USD 500"))            # 500.0
+    print(clean_currency(""))                   # 0.0
+
+    print(extract_year_mdy("12/25/2020"))       # 2020
+    print(extract_year_mdy("01/01/1999"))       # 1999
+
+    print(clean_country_usa("USA"))             # United States
+    print(clean_country_usa("United States"))   # United States
+    print(clean_country_usa("India"))           # India
 
