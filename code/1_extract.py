@@ -1,10 +1,8 @@
 import pandas as pd
-import numpy as np
 import streamlit as st
 import pandaslib as pl
 import os
-  
-#TODO Write your extraction code here
+
 st.title("Data Extraction and Cleaning Pipeline")
 
 survey_url = pd.read_csv('https://docs.google.com/spreadsheets/d/1IPS5dBSGtwYVbjsfbaMCYIWnOuRmJcbequohNxCyGVw/export?resourcekey=&gid=1625408792&format=csv')
